@@ -17,6 +17,11 @@ from shlex import split
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
+    def __init__(self, *args, **kwargs):
+        '''Initialization'''
+        super().__init__(*args, **kwargs)
+        self.file_storage = FileStorage()
+
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
