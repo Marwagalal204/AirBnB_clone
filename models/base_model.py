@@ -8,14 +8,13 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         tform = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key in ['created_at', 'updated_at']:
                         setattr(self, key, datetime.strptime(value, tform))
-        else:
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
             models.storage.new(self)
 
     def save(self):
