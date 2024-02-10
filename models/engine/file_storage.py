@@ -39,6 +39,7 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
+
 FileStorage.classes = {
         'BaseModel': BaseModel,
         'User': User,
