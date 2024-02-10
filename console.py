@@ -24,12 +24,13 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
-        return True
+        sys.exit()
+
 
     def do_EOF(self, arg):
         """Exit the program by handling End-of-File (EOF)"""
         print()
-        return True
+        sys.exit()
 
     def emptyline(self):
         """Called when an empty line is entered"""
