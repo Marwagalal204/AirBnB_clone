@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""start of the cmd"""
 
 import cmd
 from models.base_model import BaseModel
@@ -15,6 +16,7 @@ from shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
+    """bulding a simple cmd for HBNB"""
     prompt = '(hbnb) '
 
     def __init__(self, *args, **kwargs):
